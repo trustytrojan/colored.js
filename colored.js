@@ -1,4 +1,4 @@
-const colors = {
+const colors_nums = {
   black: 0,
   gray: 0,
   grey: 0,
@@ -12,20 +12,22 @@ const colors = {
   default: 9
 }
 
-for(const c in colors) {
-  colors['bg_'+c] = (40+colors[c]).toString()
+const colors = {}
+
+for(const c in colors_nums) {
+  colors[c] = (30+colors_nums[c]).toString()
 }
 
-for(const c in colors) {
-  colors['bright_'+c] = (90+colors[c]).toString()
+for(const c in colors_nums) {
+  colors['bg_'+c] = (40+colors_nums[c]).toString()
 }
 
-for(const c in colors) {
-  colors['bright_bg_'+c] = (100+colors[c]).toString()
+for(const c in colors_nums) {
+  colors['bright_'+c] = (90+colors_nums[c]).toString()
 }
 
-for(const c in colors) {
-  colors[c] = (30+colors[c]).toString()
+for(const c in colors_nums) {
+  colors['bright_bg_'+c] = (100+colors_nums[c]).toString()
 }
 
 const attributes = {
@@ -84,7 +86,7 @@ function rgb_function_generator(base) {
   }
 }
 module.exports.rgb = rgb_function_generator(rgb_base.replace('F/G', '38'))
-module.exports.bg_rgb = rgb_function_generator(rgb_base.replace('F/G', '48'))
+module.exports.rgb_bg = rgb_function_generator(rgb_base.replace('F/G', '48'))
 
 function hex_to_rgb(hex) {
   

@@ -1,5 +1,5 @@
 // assuming i uploaded this to npm lol
-const colored = required('colored.js')
+const colored = require('colored.js')
 
 console.log(colored.cyan('this text is cyan'))
 

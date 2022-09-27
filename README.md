@@ -7,4 +7,4 @@ and boom
 
 ## API
 
-## `colored.<color_style>[.<attribute>](string)`
+### `colored.<color_style>[.<attribute>](string)`

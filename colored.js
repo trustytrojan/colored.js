@@ -1,7 +1,5 @@
 const colors_nums = {
   black: 0,
-  gray: 0,
-  grey: 0,
   red: 1,
   green: 2,
   yellow: 3,
@@ -9,7 +7,6 @@ const colors_nums = {
   purple: 5,
   cyan: 6,
   white: 7,
-  default: 9
 }
 
 const colors = {}
@@ -17,6 +14,9 @@ const colors = {}
 for(const c in colors_nums) {
   colors[c] = (30+colors_nums[c]).toString()
 }
+
+// default resets the color mode no matter if it's 39, 49, 99, or 109.
+// so there's no need for a method like 'bright_bg_default'.
 
 for(const c in colors_nums) {
   colors['bg_'+c] = (40+colors_nums[c]).toString()
@@ -31,11 +31,12 @@ for(const c in colors_nums) {
 }
 
 const attributes = {
+  none: '0',
   bold: '1',
   dim: '2',
   italic: '3',
   underline: '4',
-  blink: '5',
+  blinking: '5',
   overline: '6',
   inverse: '7',
   invisible: '8',
@@ -73,6 +74,8 @@ for(const c in colors) {
   for(const a in attributes)
     module.exports[c][a] = (x) => colored_str(x, c, a)
 }
+for(const a in attributes)
+  module.exports[a] = (x) => colored_str(x, null, a)
 
 // create functions in the export object for truecolor support
 const rgb_base = '\033[A;F/G;2;R;G;Bm'
@@ -88,12 +91,27 @@ function rgb_function_generator(base) {
 module.exports.rgb = rgb_function_generator(rgb_base.replace('F/G', '38'))
 module.exports.rgb_bg = rgb_function_generator(rgb_base.replace('F/G', '48'))
 
-function hex_to_rgb(hex) {
-  
+const translation = {
+  a: 10,
+  b: 11,
+  c: 12,
+  d: 13,
+  e: 14,
+  f: 15
 }
-module.exports.hex = function(hex) {
-  hex = hex.replace('#', '')
 
+for(let i = 0; i <= 9; ++i)
+  translation[i.toString()] = i
+
+function hex_function_generator(rgb_func) {
+  return function(hex) {
+    const r = translation[hex[0]] + 16*translation[hex[1]]
+    const g = translation[hex[2]] + 16*translation[hex[3]]
+    const b = translation[hex[4]] + 16*translation[hex[5]]
+    return rgb_func(r, g, b)
+  }
 }
+module.exports.hex = hex_function_generator(this.rgb)
+module.exports.hex_bg = hex_function_generator(this.rgb_bg)
 
 module.exports.colored_str = colored_str

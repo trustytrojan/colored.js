@@ -7,4 +7,10 @@ and boom
 
 ## API
 
-### `colored.<color_style>[.<attribute>](string)`
+### colored.`<color>[.<attribute>](string)`
+
+### colored.`<attribute>(string)`
+
+if using both a color and attribute, the order is always `color.attribute`
+
+no ifs or buts just deal with it

@@ -35,6 +35,10 @@ if using both a color and attribute, the order is always `color.attribute`
 
 no ifs or buts just deal with it
 
+## `color.attribute` example
+
+- `colored.blue.underline(string)` - colors blue and underlines when printed to terminal
+
 ### `colored.[bg_]rgb(r, g, b)[.<attribute>](string)`
 
 pass numbers for `r`, `g`, `b`

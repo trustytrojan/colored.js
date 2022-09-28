@@ -35,10 +35,6 @@ if using both a color and attribute, the order is always `color.attribute`
 
 no ifs or buts just deal with it
 
-## `color.attribute` example
-
-- `colored.blue.underline(string)` - colors blue and underlines when printed to terminal
-
 ### `colored.[bg_]rgb(r, g, b)[.<attribute>](string)`
 
 pass numbers for `r`, `g`, `b`
@@ -54,7 +50,7 @@ these two definitely do not work on a login shell / tty
 ```js
 const colored = require('colored.js')
 
-const str = colored.bright_bg_blue('my background is bright blue')
+console.log(colored.bright_bg_blue('my background is bright blue'))
 
-console.log(str)
+console.log(colored.red.underline(`this text is red and underlined`))
 ```

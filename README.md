@@ -5,6 +5,12 @@ i saw how chalk's API works and thought "hey wow this looks really easy to imple
 
 and boom
 
+## Installation
+
+```
+npm i colored.js
+```
+
 ## API
 
 ### colored.`<color>[.<attribute>](string)`

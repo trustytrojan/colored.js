@@ -9,6 +9,8 @@ and boom
 
 ### colored.`<color>[.<attribute>](string)`
 
+or
+
 ### colored.`<attribute>(string)`
 
 if using both a color and attribute, the order is always `color.attribute`

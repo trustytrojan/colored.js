@@ -1,7 +1,5 @@
 const colored = require('./colored')
 
-// if i upload to npm it should be: const colored = require('colored.js')
-
 const attribute_test = [
   colored.none('none'),
   colored.bold('bold'),

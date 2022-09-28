@@ -16,3 +16,13 @@ or
 if using both a color and attribute, the order is always `color.attribute`
 
 no ifs or buts just deal with it
+
+## quick example
+
+```js
+const colored = require('colored.js')
+
+const str = colored.bright_bg_blue('my background is bright blue')
+
+console.log(str)
+```

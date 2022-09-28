@@ -1,3 +1,5 @@
+// Author: github.com/trustytrojan
+
 const colors_nums = {
   black: 0,
   red: 1,

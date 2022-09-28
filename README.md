@@ -50,7 +50,7 @@ these two definitely do not work on a login shell / tty
 ```js
 const colored = require('colored.js')
 
-console.log(colored.bright_bg_blue('my background is bright blue'))
+console.log( colored.bright_bg_blue('my background is bright blue') )
 
-console.log(colored.red.underline(`this text is red and underlined`))
+console.log( colored.red.underline(`this text is red and underlined`) )
 ```

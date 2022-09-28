@@ -15,6 +15,16 @@ npm i colored.js
 
 ### `colored.<color>[.<attribute>](string)`
 
+with `bg`, `bright`, and `bright_bg` variants of each color as well
+
+- `bg` means background color. example: `colored.bg_red(string)`
+
+- `bright` is literally self-explanatory. example: `colored.bright_blue(string)`
+
+- `bright_bg` gives you a bright background color. example `colored.bright_bg_black(string)`
+
+  - (by the way combining `bright` and `black` will result in a gray/grey color on most terminals)
+
 or
 
 ### `colored.<attribute>(string)`
@@ -25,11 +35,13 @@ if using both a color and attribute, the order is always `color.attribute`
 
 no ifs or buts just deal with it
 
-### `colored.rgb(r, g, b)(string)`
+### `colored.[bg_]rgb(r, g, b)[.<attribute>](string)`
 
 pass numbers for `r`, `g`, `b`
 
-### `colored.hex('#ffffff')(string)`
+attributes can be applied after the call to `rgb` or `hex` or their `bg` variants
+
+### `colored.[bg_]hex('#ffffff')[.<attribute>](string)`
 
 these two definitely do not work on a login shell / tty
 

@@ -5,17 +5,33 @@ i saw how chalk's API works and thought "hey wow this looks really easy to imple
 
 and boom
 
+## Installation
+
+```
+npm i colored.js
+```
+
 ## API
 
-### colored.`<color>[.<attribute>](string)`
+### `colored.<color>[.<attribute>](string)`
 
 or
 
-### colored.`<attribute>(string)`
+### `colored.<attribute>(string)`
+
+both will return `string` with the specified color and/or attribute applied
 
 if using both a color and attribute, the order is always `color.attribute`
 
 no ifs or buts just deal with it
+
+### `colored.rgb(r, g, b)(string)`
+
+pass numbers for `r`, `g`, `b`
+
+### `colored.hex('#ffffff')(string)`
+
+these two definitely do not work on a login shell / tty
 
 ## quick example
 

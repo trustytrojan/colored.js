@@ -19,6 +19,8 @@ or
 
 ### colored.`<attribute>(string)`
 
+both will return `string` with the specified color and/or attribute applied
+
 if using both a color and attribute, the order is always `color.attribute`
 
 no ifs or buts just deal with it

@@ -1,5 +1,5 @@
 # colored.js
-my simple fork of https://github.com/chalk/chalk
+inspired by https://github.com/chalk/chalk
 
 i saw how chalk's API works and thought "hey wow this looks really easy to implement"
 

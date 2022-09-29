@@ -1,10 +1,6 @@
 # colored.js
 inspired by https://github.com/chalk/chalk
 
-i saw how chalk's API works and thought "hey wow this looks really easy to implement"
-
-and boom
-
 ## Installation
 
 ```

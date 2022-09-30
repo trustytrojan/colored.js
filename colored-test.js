@@ -1,3 +1,6 @@
+// Author: github.com/trustytrojan
+// Run this in your terminal to test out which styles it can render!
+
 const colored = require('./colored')
 
 const attribute_test = [

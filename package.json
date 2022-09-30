@@ -1,6 +1,6 @@
 {
   "name": "colored.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "color your strings with ansi escape sequences for output to the terminal",
   "main": "colored.js",
   "repository": {

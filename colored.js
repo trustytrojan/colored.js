@@ -8,25 +8,16 @@ const colors_nums = {
   blue: 4,
   purple: 5,
   cyan: 6,
-  white: 7,
-  default: 9
+  white: 7
 }
 
 const colors = {}
 
 for(const c in colors_nums) {
   colors[c] = (30+colors_nums[c]).toString()
-}
-
-// default resets the color mode no matter if it's 39, 49, 99, or 109.
-// so there's no need for a method like 'bright_bg_default'.
-
-for(const c in colors_nums) switch(c) {
-  case 'default': continue
-  default:
-    colors['bg_'+c] = (40+colors_nums[c]).toString()
-    colors['bright_'+c] = (90+colors_nums[c]).toString()
-    colors['bright_bg_'+c] = (100+colors_nums[c]).toString()
+  colors['bg_'+c] = (40+colors_nums[c]).toString()
+  colors['bright_'+c] = (90+colors_nums[c]).toString()
+  colors['bright_bg_'+c] = (100+colors_nums[c]).toString()
 }
 
 const attributes = {
